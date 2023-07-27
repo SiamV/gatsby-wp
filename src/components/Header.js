@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "./Navbar"
-import * as classes from "./header.module.css"
+import * as classes from "./Header.module.css"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Header = () => {
@@ -9,10 +9,10 @@ const Header = () => {
             {/* for dynamic images <GatsbyImage image={props.image} alt={props.image.name}/>*/}
             <StaticImage
                 placeholder="blurred"
-                src="../images/icon.png"
+                src="../images/logo-moto.png"
                 alt="logo"
                 formats={["AUTO", "WEBP", "AVIF"]}
-                style={{ width: `50px` }}
+                style={{ width: `80px` }}
             />
             <Navbar />
         </div>
