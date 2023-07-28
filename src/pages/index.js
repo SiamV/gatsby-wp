@@ -1,23 +1,28 @@
 // import { graphql, Link } from "gatsby"
+// import { graphql, useStaticQuery } from "gatsby"
+import Seo from "../components/Seo"
 import React from "react"
 import Layout from "../components/Layout"
 import "../styles/global.css"
 
-const HomePage = (props) => {
+const HomePage = () => {
+
+  // console.log("props>>>", props)
 
   //example static query
-  // import { graphql, useStaticQuery } from "gatsby"
+
   // const site = useStaticQuery(
   //   graphql`
-  //   query{
-  //     site {
-  //       siteMetadata {
+  //   query MyQuery {
+  //     allWpPost {
+  //       nodes {
   //         title
-  //         siteUrl
-  //         description
+  //         content
+  //         id
   //       }
   //     }
-  //   }`
+  //   }
+  //   `
   // )
   // console.log("site>>>", site) //metadata from gatsby-config.js
 
@@ -28,21 +33,22 @@ const HomePage = (props) => {
           Туры по Мексике
         </h1>
         <p>
-          Why do we use it?
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+          Добро пожаловать в Мексику, где жизнь бьет ключом и приключения ждут вас на каждом шагу! Если вы ищете необычный способ провести свой отпуск, то мототур по Мексике – это то, что вам нужно!
 
+          Мексика – это удивительная страна, которая известна своей культурой, красивыми пляжами, густыми джунглями и горячими источниками. На мотоцикле вы сможете увидеть все эти красоты и многое другое. Мототур – это не просто путешествие, это настоящее приключение, которое запомнится на всю жизнь.
 
-          Where does it come from?
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+          Мы предлагаем различные маршруты по Мексике, чтобы вы могли выбрать тот, который подходит именно вам. Наша команда профессионалов знает все лучшие места для поездок на мотоциклах и сможет помочь вам спланировать вашу поездку так, чтобы вы получили максимум удовольствия.
 
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+          Если вы любите природу, то мы можем предложить вам маршруты через густые джунгли и национальные парки. Вы увидите водопады, горные пейзажи и диких животных, которые обитают в этих местах. Если вы предпочитаете пляжный отдых, то мы можем предложить маршруты по красивым пляжам Мексики, где вы сможете наслаждаться теплым морем и белым песком.
 
-          Where can I get some?
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+          Мы также предлагаем маршруты по историческим городам Мексики, где вы сможете узнать больше о культуре и истории этой удивительной страны. Вы посетите старинные замки, крепости и музеи, где будут рассказывать о древних цивилизациях, которые жили на этих землях.
+
+          Все наши мотоциклы в отличном состоянии и проходят регулярное обслуживание. Мы предоставляем полную экипировку, включая шлем, перчатки и куртки. Наши гиды – это опытные профессионалы, которые знают все дороги и маршруты в Мексике. Они будут с вами на протяжении всей поездки и помогут вам в любой ситуации.
+
+          Мототур по Мексике – это не только приключение, но и возможность познакомиться с новыми людьми и насладиться местной кухней. Вы попробуете настоящую мексиканскую еду, которая известна своими яркими вкусами и ароматами.
+
+          Не упустите возможность провести незабываемый отпуск на мотоцикле в Мексике! Обратитесь к нам сегодня и мы поможем вам спланировать вашу поездку так, чтобы она была идеальной для вас. Мы гарантируем, что вы получите максимум удовольствия от вашего мототура по Мексике!
         </p>
-        {/* {nodes.map(post => <div key={post.mysqlId}>
-          <Link to={`/${post.category}/${post.url}`}>{post.title}</Link>
-        </div>)} */}
       </main>
     </Layout>
   )
@@ -50,4 +56,20 @@ const HomePage = (props) => {
 
 export default HomePage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => (
+  <Seo />
+)
+
+
+// export const query = graphql`
+//     query MyQuery {
+//       allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "travels"}}}}}) {
+//         nodes {
+//           title
+//           link
+//           databaseId
+//           content
+//         }
+//       }
+//     }
+// `

@@ -1,3 +1,30 @@
 .navbarMainBlock {
-    margin-left: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
+
+.menuButton {
+    margin-right: 10vw;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #A6EBFF;
+    background-color: #368DA6;
+    border: none;
+    border-radius: 10%;
+    box-shadow: 0 0 10px #000000;
+}
+.menuButton:hover {
+    background-color: #A6EBFF;
+    color: #368DA6;
+}
+.menuButton:active {
+    background-color: #A6EBFF;
+    color: #368DA6;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

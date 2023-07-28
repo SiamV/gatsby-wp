@@ -8,7 +8,7 @@ const Instagram = () => {
             <a href="https://www.instagram.com/mexicoline.ru">
             <StaticImage
                 placeholder="blurred"
-                src="../../images/instagram-v2.png'"
+                src="../../images/instagram-v2.png"
                 alt="Instagram"
                 formats={["AUTO", "WEBP", "AVIF"]}
                 className={classes.imgSocial}
