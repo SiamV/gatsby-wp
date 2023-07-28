@@ -4,7 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `Home Page`,
-    description: `Home Page description`
+    description: `Home Page description`,
+    robots: `index,follow`,
+    property: `` //for SSM
   },
   plugins: [
     {

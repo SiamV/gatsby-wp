@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Instagram = () => {
     return (
         <div className={classes.wrapperImgSocial}>
-            <a href="https://www.instagram.com/mexicoline.ru">
+            <a href="https://www.instagram.com/mexicoline.ru" rel="nofollow">
             <StaticImage
                 placeholder="blurred"
                 src="../../images/instagram-v2.png"

@@ -1,18 +1,23 @@
 import React from "react"
 import useSiteMetadata from "../hooks/use-site-metadata"
 
-const Seo = ({ title, description, children }) => {
-    const { title: defaultTitle, description: defaultDescription } = useSiteMetadata()
+const Seo = ({ title, description, children, robots, property }) => {
+    const { title: defaultTitle,
+        description: defaultDescription,
+        robots: defaultRobots
+    } = useSiteMetadata()
 
-    const seo = {
+    const seoData = {
         title: title || defaultTitle,
         description: description || defaultDescription,
+        robots: robots || defaultRobots, //"index,follow" or "noindex, nofollow"
     }
 
     return (
         <>
-            <title>{seo.title}</title>
-            <meta name="description" content={seo.description} />
+            <title>{seoData.title}</title>
+            <meta name="description" content={seoData.description} />
+            <meta name="robots" content={seoData.robots} />
             {children}
         </>
     )

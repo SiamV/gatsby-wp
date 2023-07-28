@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Telegram = () => {
     return (
         <div className={classes.wrapperImgSocial}>
-            {/* <a href="https://t.me/ivamex"> */}
+            {/* <a href="https://t.me/ivamex" rel="nofollow"> */}
             <StaticImage
                 placeholder="blurred"
                 src="../../images/telegram-v2.png"
