@@ -10,7 +10,6 @@ const BackgroundImage = () => {
             alt="background"
             formats={["AUTO", "WEBP", "AVIF"]}
             className={classes.wrapperBackgroundImg}
-            // style={{ position: "absolute" }}
         />
     )
 }

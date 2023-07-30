@@ -2,13 +2,14 @@ import Seo from "../components/Seo"
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/Layout"
+import *as classes from "../styles/travels.module.css"
 
 const Travels = ({ data }) => {
     const postsTravel = data.allWpPost.nodes
     return (
         <Layout>
             <h2> Предстоящие мероприятия:</h2>
-            <div>
+            <div className={classes.wrapperNotice}>
                 30 июня едем по маршруту Канкун-Эль Куйо
             </div>
             <h2> Наши прошлые поездки:</h2>

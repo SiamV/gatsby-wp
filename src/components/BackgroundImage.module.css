@@ -1,5 +1,4 @@
 .wrapperBackgroundImg {
-    position: absolute;
+    object-fit: cover;
     z-index: 0;
-    width: 100px;
 }

@@ -1,5 +1,4 @@
 import React from "react"
-import BackgroundImage from "./BackGroundImage"
 import Footer from "./Footer"
 import Header from "./Header"
 import *as classes from "./Layout.module.css"
@@ -11,8 +10,7 @@ const Layout = ({ children }) => {
                 <Header />
             </div>
             <div className={classes.siteWrapperFeed}>
-                {children}
-                <BackgroundImage/>
+                    {children}
             </div>
             <div className={classes.siteWrapperFooter}>
                 <Footer />

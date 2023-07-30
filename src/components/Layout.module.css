@@ -3,7 +3,8 @@
 
     grid-template-areas: 'header header' 'feed feed' 'footer footer';
 
-    grid-template-rows: minmax(10vh, auto) minmax(80vh, auto) minmax(10vh, auto);
+    grid-template-rows: 10vh 80vh 10vh;
+    /* grid-template-rows: minmax(10vh, auto) minmax(80vh, auto) minmax(10vh, auto); */
     grid-template-columns: 0vw auto;
 }
 
@@ -38,17 +39,24 @@
     background-color: white;
     margin: 0px 10px 0px 10px;
     z-index: 3;
-    height: auto;
+    /* height: auto; */
 }
 
 .siteWrapper .siteWrapperFeed {
     grid-area: feed;
-    background-color: white;
+    background-color: rgba(164, 255, 195, 0.8);
+    /* background-image: url("../images/photo_2023-07-29_14-15-34.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom center; */
+    /* background: transparent; */
     border: 2px dotted grey;
+    /* border-bottom: 0; */
     padding: 5px;
-    margin: 2px 10px 10vh 10px;
-    overflow-x: auto;
-    height: auto;
+    margin: 2px 10px 2px 10px;
+    overflow: auto;
+    /* height: auto; */
     z-index: 2;
 }
 
@@ -60,5 +68,5 @@
     background-color: white;
     margin: 0px 10px 0px 10px;
     padding: 5px;
-    height: auto;
+    /* height: auto; */
 }

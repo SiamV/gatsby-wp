@@ -14,7 +14,7 @@ const Header = () => {
                     src="../images/logo-moto.png"
                     alt="logo"
                     formats={["AUTO", "WEBP", "AVIF"]}
-                    style={{ width: `80px` }}
+                    style={{ width: `80px`, height: `10vh` }}
                 />
             </Link>
             <Navbar />
