@@ -7,9 +7,14 @@ const Travels = ({ data }) => {
     const postsTravel = data.allWpPost.nodes
     return (
         <Layout>
+            <h2> Предстоящие мероприятия:</h2>
+            <div>
+                30 июня едем по маршруту Канкун-Эль Куйо
+            </div>
+            <h2> Наши прошлые поездки:</h2>
             <div>
                 {postsTravel.map(post => <div key={post.databaseId}>
-                    <Link to={`${post.link}`}>{post.title}</Link>
+                    <Link to={`/${post.categories.nodes[0].name}/${post.slug}`}>{post.title}</Link>
                 </div>)}
             </div>
         </Layout>
@@ -27,8 +32,13 @@ export const query = graphql`
         allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "travels"}}}}}) {
             nodes {
               title
-              link
               databaseId
+              slug
+              categories {
+                nodes {
+                  name
+                }
+              }
             }
           }
     }

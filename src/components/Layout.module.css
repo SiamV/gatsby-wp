@@ -47,10 +47,9 @@
     border: 2px dotted grey;
     padding: 5px;
     margin: 2px 10px 10vh 10px;
-    font-size: 17px;
-    line-height: 1.4;
     overflow-x: auto;
     height: auto;
+    z-index: 2;
 }
 
 .siteWrapper .siteWrapperFooter {

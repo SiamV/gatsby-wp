@@ -1,5 +1,3 @@
-// import { graphql, Link } from "gatsby"
-// import { graphql, useStaticQuery } from "gatsby"
 import Seo from "../components/Seo"
 import React from "react"
 import Layout from "../components/Layout"

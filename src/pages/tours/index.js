@@ -8,7 +8,7 @@ const Tours = (props) => {
         <Layout>
             <div>
                 <Link to={"/tours/mexico"}>Туры по Мексике</Link>
-                it is traveling page
+                <Link to={"/tours/la"}>Туры по Латинской Америке</Link>
             </div>
         </Layout>
     )

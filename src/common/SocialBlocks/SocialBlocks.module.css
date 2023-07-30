@@ -7,6 +7,7 @@
     box-shadow: 0 0 10px #000000;
     /*box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;*/
     border-radius: 25%;
+    margin-right: 30px;
 }
 
 .wrapperImgSocial .imgSocial:active {
@@ -21,6 +22,7 @@
         height: 40px;
         box-shadow: 0 0 10px #000000;
         border-radius: 25%;
+        margin-right: 10px;
     }
 
     .wrapperImgSocial .imgSocial:active {

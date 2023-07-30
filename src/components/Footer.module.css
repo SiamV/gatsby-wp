@@ -1,6 +1,10 @@
 .wrapperFooter {
-    display: flex; 
-    justify-content: space-around; 
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
+}
+
+.wrapperText {
+    margin-right: 20px;
 }
