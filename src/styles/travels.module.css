@@ -1,3 +1,38 @@
 .wrapperNotice {
     z-index: 1;
 }
+.wrapperPosts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapperOnePost {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10%;
+    overflow: hidden;
+    background-color: aliceblue;
+    margin: 10px 5px 5px 5px;
+}
+
+.wrapperImage {
+    max-width: 400px;
+    height: 70%;
+    overflow: hidden;
+    /* -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition:         transform .8s ease-in-out; */
+}
+
+/* .wrapperImage:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} */
+
+
+.gatsbyImage {
+    object-fit: cover;
+}
+
+.wrapperInfoBlock{
+    padding: 0 10px 10px 10px;
+}

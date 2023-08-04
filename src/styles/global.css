@@ -22,6 +22,11 @@ h2 {
     color: #3f5af3 ;
 }
 
+h3 {
+    font-size: 16px;
+    color: #151516 ;
+}
+
 a {
     color: #0070f3;
     font-style: italic;
