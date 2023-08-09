@@ -19,15 +19,11 @@ const Travels = ({ data }) => {
         {postsTravel.map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
           <div className={classes.wrapperImage}>
             <GatsbyImage
-              placeholder="blurred"
               image={getImage(post.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
               alt={"image"} //change for SEO
-              formats={["AUTO", "WEBP", "AVIF"]}
               layout="constrained"
+              imgStyle={{objectFit: `cover`}}
               className={classes.gatsbyImage}
-            // style={{ maxWidth: `400px` }}
-            // layout="fullWidth"
-            // breakpoints = {[300, 750, 1080]}
             />
           </div>
           <div className={classes.wrapperInfoBlock}>
@@ -43,7 +39,7 @@ const Travels = ({ data }) => {
 export default Travels
 
 export const Head = () => (
-  <Seo title="Page Travels" description={"travels description"} />
+  <Seo title="Наши поездки по Юкатану на мото" description={"Собираемся компанией в Канкуне и катаем на мото по Юкатану"} robots={"noindex, nofollow"}/>
 )
 
 export const query = graphql`
@@ -62,8 +58,11 @@ query MyQuery {
         node {
           localFile {
             childImageSharp {
-              gatsbyImageData
-
+              gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+                transformOptions: {cropFocus: CENTER}
+              )
             }
           }
         }

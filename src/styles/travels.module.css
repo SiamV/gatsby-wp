@@ -17,7 +17,7 @@
 
 .wrapperImage {
     max-width: 400px;
-    height: 70%;
+    height: 300px;
     overflow: hidden;
     /* -webkit-transition: -webkit-transform .8s ease-in-out;
     transition:         transform .8s ease-in-out; */
@@ -30,7 +30,8 @@
 
 
 .gatsbyImage {
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .wrapperInfoBlock{

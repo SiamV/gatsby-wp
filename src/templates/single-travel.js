@@ -1,12 +1,10 @@
-import React from "react"
-import Layout from "../components/Layout"
-import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Seo from "../components/Seo"
-import *as classes from "../styles/single-travel.module.css"
+import React from "react";
+import Layout from "../components/Layout";
+import { graphql } from "gatsby";
+import Seo from "../components/Seo";
+import *as classes from "../styles/single-travel.module.css";
+import Slider from "../components/Slider/Slider";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from "react-bootstrap";
 
 const SinglePostTravel = ({ data }) => {
   const { title, content, images } = data.wpPost
@@ -14,26 +12,10 @@ const SinglePostTravel = ({ data }) => {
   return (
     <Layout>
       <h1>{title}</h1>
-      <div >
-        <Carousel>
-          {images.slider.map((img) => (
-            <Carousel.Item key={img.localFile.childImageSharp.id}>
-              <GatsbyImage
-                placeholder="blurred"
-                image={getImage(img.localFile.childImageSharp.gatsbyImageData)}
-                alt={"slider"} //change for SEO
-                formats={["AUTO", "WEBP", "AVIF"]}
-                layout="constrained"
-                //   className={classes.wrapperSlider}
-                style={{ maxWidth: `400px`, maxHeight: `400px` }}
-              // layout="fullWidth"
-              // breakpoints = {[300, 750, 1080]}
-              />
-            </Carousel.Item>
-          )
-          )}
-        </Carousel>
+      <div className={classes.wrapperSlider}>
+        <Slider data={images.slider} />
       </div>
+
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </Layout>
   )
@@ -60,43 +42,16 @@ query getPageTravel($url: String) {
       slider {
         localFile {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
             id
           }
+          base
         }
       }
     }
   }
 }
 `
-
-
-// export const query = graphql`
-// query getPageTravel($url: String) {
-//   wpPost(slug: {eq: $url}) {
-//     seodata {
-//       seotitle
-//       seodescription
-//       robots
-//     }
-//     title
-//     content
-//     images {
-//       imagesForSlider {
-//         localFile {
-//           childImageSharp {
-//             gatsbyImageData
-//           }
-//         }
-//       }
-//       imagesForSlider2 {
-//         localFile {
-//           childImageSharp {
-//             gatsbyImageData
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// `
