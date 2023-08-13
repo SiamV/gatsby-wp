@@ -5,12 +5,8 @@
 
     grid-template-rows: 10vh 80vh 10vh;
     /* grid-template-rows: minmax(10vh, auto) minmax(80vh, auto) minmax(10vh, auto); */
-    grid-template-columns: 0vw auto;
+    grid-template-columns: 0vw 100%;
 }
-
-/*основной - #CEF4FF*/
-/*дополнительный #A6EBFF */
-/*акцент #FFDDBA */
 
 /*for desctop*/
 /*grid-template-areas:*/
@@ -36,25 +32,30 @@
     grid-area: header;
     position: sticky;
     top: 0;
-    background-color: white;
     margin: 0px 10px 0px 10px;
     z-index: 3;
     /* height: auto; */
+    background-color: rgba(230, 230, 230, 1);
+    /* background-image: url("../images/backgroundNavbar1.png");
+    background-size: 80vw 10vh;
+    background-repeat: no-repeat;
+    background-position: bottom right; */
+    /* background: transparent; */
 }
 
 .siteWrapper .siteWrapperFeed {
     grid-area: feed;
-    background-color: rgba(164, 255, 195, 0.8);
-    /* background-image: url("../images/photo_2023-07-29_14-15-34.jpg");
+    /* background-color: rgba(164, 255, 195, 0.8); */
+    background-image: url("../images/backgroundFeed_grey.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: bottom center; */
+    background-position: bottom center;
     /* background: transparent; */
     border: 2px dotted grey;
     /* border-bottom: 0; */
     padding: 5px;
-    margin: 2px 10px 2px 10px;
+    margin: 5px 10px 5px 10px;
     overflow: auto;
     /* height: auto; */
     z-index: 2;
@@ -67,6 +68,12 @@
     z-index: 3;
     background-color: white;
     margin: 0px 10px 0px 10px;
-    padding: 5px;
+    padding-bottom: 5px;
     /* height: auto; */
+    background-color: rgba(230, 230, 230, 1);
+    background-image: url("../images/backgroundFooter.jpg");
+    background-size: 100px 10vh;;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: top center;
 }

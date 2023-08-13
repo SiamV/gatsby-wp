@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import *as classes from "./navbar.module.css"
+import *as classes from "./Navbar.module.css"
 
 const Navbar = () => {
 
@@ -37,7 +37,7 @@ const Navbar = () => {
             </Link>
             <Link to={"/travels"} >
                 <button className={classes.menuButton}>
-                    Покатушки
+                    RiderClub
                 </button>
             </Link>
         </div>

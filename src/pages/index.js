@@ -1,74 +1,59 @@
-import Seo from "../components/Seo"
-import React from "react"
-import Layout from "../components/Layout"
-import "../styles/global.css"
+import React from "react";
+import { graphql } from "gatsby";
+import Seo from "../components/Seo";
+import Layout from "../components/Layout";
+import Slider from "../components/Slider/Slider";
+import *as classes from "../styles/mainPage.module.css";
 
-
-const HomePage = () => {
-
-  // console.log("props>>>", props)
-
-  //example static query
-
-  // const site = useStaticQuery(
-  //   graphql`
-  //   query MyQuery {
-  //     allWpPost {
-  //       nodes {
-  //         title
-  //         content
-  //         id
-  //       }
-  //     }
-  //   }
-  //   `
-  // )
-  // console.log("site>>>", site) //metadata from gatsby-config.js
-
+const HomePage = ({ data }) => {
+  const { content, images } = data.wpPage
   return (
     <Layout>
-      <main >
-        <h1>
-          Туры по Мексике
-        </h1>
-        <p>
-          Добро пожаловать в Мексику, где жизнь бьет ключом и приключения ждут вас на каждом шагу! Если вы ищете необычный способ провести свой отпуск, то мототур по Мексике – это то, что вам нужно!
-
-          Мексика – это удивительная страна, которая известна своей культурой, красивыми пляжами, густыми джунглями и горячими источниками. На мотоцикле вы сможете увидеть все эти красоты и многое другое. Мототур – это не просто путешествие, это настоящее приключение, которое запомнится на всю жизнь.
-
-          Мы предлагаем различные маршруты по Мексике, чтобы вы могли выбрать тот, который подходит именно вам. Наша команда профессионалов знает все лучшие места для поездок на мотоциклах и сможет помочь вам спланировать вашу поездку так, чтобы вы получили максимум удовольствия.
-
-          Если вы любите природу, то мы можем предложить вам маршруты через густые джунгли и национальные парки. Вы увидите водопады, горные пейзажи и диких животных, которые обитают в этих местах. Если вы предпочитаете пляжный отдых, то мы можем предложить маршруты по красивым пляжам Мексики, где вы сможете наслаждаться теплым морем и белым песком.
-
-          Мы также предлагаем маршруты по историческим городам Мексики, где вы сможете узнать больше о культуре и истории этой удивительной страны. Вы посетите старинные замки, крепости и музеи, где будут рассказывать о древних цивилизациях, которые жили на этих землях.
-
-          Все наши мотоциклы в отличном состоянии и проходят регулярное обслуживание. Мы предоставляем полную экипировку, включая шлем, перчатки и куртки. Наши гиды – это опытные профессионалы, которые знают все дороги и маршруты в Мексике. Они будут с вами на протяжении всей поездки и помогут вам в любой ситуации.
-
-          Мототур по Мексике – это не только приключение, но и возможность познакомиться с новыми людьми и насладиться местной кухней. Вы попробуете настоящую мексиканскую еду, которая известна своими яркими вкусами и ароматами.
-
-          Не упустите возможность провести незабываемый отпуск на мотоцикле в Мексике! Обратитесь к нам сегодня и мы поможем вам спланировать вашу поездку так, чтобы она была идеальной для вас. Мы гарантируем, что вы получите максимум удовольствия от вашего мототура по Мексике!
-        </p>
-      </main>
+      <h1>
+        Путешествия на мотоцикле по Мексике и Латинской Америке.
+      </h1>
+      <Slider data={images.slider} />
+      <div
+        dangerouslySetInnerHTML={{ __html: content }}
+        className={classes.wrapperMainContent}
+        priority="true"
+      />
     </Layout>
   )
 }
 
 export default HomePage
 
-export const Head = () => (
-  <Seo />
-)
+export const Head = ({ data }) => {
+  const { seodata } = data.wpPage
+  return < Seo title={seodata.seotitle} description={seodata.seodescription} robots={seodata.robots} />
+}
 
 
-// export const query = graphql`
-//     query MyQuery {
-//       allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "travels"}}}}}) {
-//         nodes {
-//           title
-//           link
-//           databaseId
-//           content
-//         }
-//       }
-//     }
-// `
+export const query = graphql`
+query getPage {
+  wpPage(slug: {eq: "main-page"}) {
+    seodata {
+      seotitle
+      seodescription
+      robots
+    }
+    title
+    content
+    images {
+      slider {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
+            id
+          }
+          base
+        }
+      }
+    }
+  }
+}
+`

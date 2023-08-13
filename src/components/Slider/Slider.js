@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { TbArrowRampLeft3, TbArrowRampRight3 } from "react-icons/tb";
 import *as classes from "./Slider.module.css";
@@ -39,8 +39,9 @@ const Slider = ({ data }) => {
                         alt={slide.localFile.base.split("-").join(" ").split(".")[0]}
                         layout="constrained"
                         className={currentIndex === slideIndex ? classes.slide : classes.slide + ' ' + classes.slideHidden}
-                        imgStyle={{objectFit: `contain`}}
+                        imgStyle={{ objectFit: `contain` }}
                         key={slide.localFile.childImageSharp.id}
+                        priority="true"
                     />
                 )
             })}

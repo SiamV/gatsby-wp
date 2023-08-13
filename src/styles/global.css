@@ -2,9 +2,15 @@ html,
 body {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: white;
     line-height: 1.4;
     font-size: 16px;
-    background-color: white;
+    background-color: rgba(230, 230, 230, 1);
+    /* background-image: url("../images/bandera-mexico.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom center; */
     width: 100%;
     height: 100%;
     margin: 0;
@@ -14,17 +20,17 @@ body {
 
 h1 {
     font-size: 20px;
-    color: #3f5af3 ;
+    color: white;
 }
 
 h2 {
     font-size: 18px;
-    color: #3f5af3 ;
+    color: #00CC00 ;
 }
 
 h3 {
     font-size: 16px;
-    color: #151516 ;
+    color: white  ;
 }
 
 a {

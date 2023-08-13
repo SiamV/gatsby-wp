@@ -12,24 +12,27 @@ const Travels = ({ data }) => {
     <Layout>
       <h2> Предстоящие мероприятия:</h2>
       <div className={classes.wrapperNotice}>
-        30 июня едем по маршруту Канкун-Эль Куйо
+        <p>
+          В RiderClub собираемся чтобы просто покатать по Юкатану в компании друзей кто живет в Канкуне, Плайя Дель Кармен или другой части Карибского побережья Мексики.
+        </p>
       </div>
       <h2> Наши прошлые поездки:</h2>
       <div className={classes.wrapperPosts}>
         {postsTravel.map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
-          <div className={classes.wrapperImage}>
-            <GatsbyImage
-              image={getImage(post.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
-              alt={"image"} //change for SEO
-              layout="constrained"
-              imgStyle={{objectFit: `cover`}}
-              className={classes.gatsbyImage}
-            />
-          </div>
-          <div className={classes.wrapperInfoBlock}>
-            <h3>{post.title}</h3>
-            <Link to={`/${post.categories.nodes[0].name}/${post.slug}`}>Подробнее...</Link>
-          </div>
+          <Link to={`/${post.categories.nodes[0].name}/${post.slug}`} className={classes.myLinkTravel}>
+            <div className={classes.wrapperImage}>
+              <GatsbyImage
+                image={getImage(post.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
+                alt={"image"} //change for SEO
+                layout="constrained"
+                imgStyle={{ objectFit: `cover` }}
+                className={classes.gatsbyImage}
+              />
+            </div>
+            <div className={classes.wrapperInfoBlock}>
+              <h3>{post.title}</h3>
+            </div>
+          </Link>
         </div>)}
       </div>
     </Layout>
@@ -38,9 +41,9 @@ const Travels = ({ data }) => {
 
 export default Travels
 
-export const Head = () => (
-  <Seo title="Наши поездки по Юкатану на мото" description={"Собираемся компанией в Канкуне и катаем на мото по Юкатану"} robots={"noindex, nofollow"}/>
-)
+export const Head = () => {
+  return <Seo title="Наши поездки по Юкатану на мото" description={"Собираемся компанией в Канкуне и катаем на мото по Юкатану"} robots={"noindex, nofollow"} />
+}
 
 export const query = graphql`
 query MyQuery {

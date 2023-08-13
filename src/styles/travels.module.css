@@ -11,7 +11,7 @@
     flex-direction: column;
     border-radius: 10%;
     overflow: hidden;
-    background-color: aliceblue;
+    background-color: rgba(207, 211, 214, 0.65);
     margin: 10px 5px 5px 5px;
 }
 
@@ -34,6 +34,18 @@
     height: 100%;
 }
 
-.wrapperInfoBlock{
+.wrapperInfoBlock {
     padding: 0 10px 10px 10px;
+}
+
+.myLinkTravel {
+    text-decoration: none;
+}
+
+.myLinkTravel:hover {
+    text-decoration: none;
+}
+
+.wrapperInfoBlock h3:hover {
+    color: #D50065;
 }

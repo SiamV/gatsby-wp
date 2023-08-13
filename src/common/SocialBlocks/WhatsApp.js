@@ -12,6 +12,8 @@ const WhatsApp = () => {
                 alt="WhatsApp"
                 formats={["AUTO", "WEBP", "AVIF"]}
                 className={classes.imgSocial}
+                layout="constrained"
+                imgStyle={{ objectFit: `contain` }}
             />
             {/* </a> */}
         </div>
