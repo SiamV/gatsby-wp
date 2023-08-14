@@ -3,9 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Home Page`,
-    description: `Home Page description`,
+    title: `Путешествия на мотоцикле по Мексике и Латинской Америке.`,
+    description: `Путешествия на мотоцикле по Мексике и Латинской Америке это незабываемые приключения, которые позволяют увидеть красоты этого региона во всей их красе и ощутить дух свободы.`,
     robots: `index,follow`,
+    siteUrl: `https://la-moto.ru`,
     property: `` //for SSM
   },
   plugins: [

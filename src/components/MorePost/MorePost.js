@@ -44,25 +44,27 @@ const MorePost = ({ url, category }) => {
 
     return (
         <div>
-            <h2>Похожие поездки: </h2>
-            <div className={classes.wrapperOnePost}>
-                <Link
-                    to={`/${relatedPost.categories.nodes[0].name}/${relatedPost.slug}`}
-                    className={classes.myLinkTravel}>
-                    <div className={classes.wrapperImage}>
-                        <GatsbyImage
-                            image={getImage(relatedPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
-                            alt={"image"} //change for SEO
-                            layout="constrained"
-                            imgStyle={{ objectFit: `cover` }}
-                            className={classes.gatsbyImage}
-                        />
-                    </div>
-                    <div className={classes.wrapperInfoBlock}>
-                        <h3>{relatedPost.title}</h3>
-                    </div>
-                </Link>
+            <div className={classes.wrapperPosts}>
+                <div className={classes.wrapperOnePost}>
+                    <Link
+                        to={`/${relatedPost.categories.nodes[0].name}/${relatedPost.slug}`}
+                        className={classes.myLinkTravel}>
+                        <div className={classes.wrapperImage}>
+                            <GatsbyImage
+                                image={getImage(relatedPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
+                                alt={"image"} //change for SEO
+                                layout="constrained"
+                                imgStyle={{ objectFit: `cover` }}
+                                className={classes.gatsbyImage}
+                            />
+                        </div>
+                        <div className={classes.wrapperInfoBlock}>
+                            <h3>{relatedPost.title}</h3>
+                        </div>
+                    </Link>
+                </div>
             </div>
+
 
 
         </div>

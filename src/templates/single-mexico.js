@@ -7,29 +7,29 @@ import Slider from "../components/Slider/Slider";
 import MorePost from "../components/MorePost/MorePost";
 
 
-const SinglePostTravel = ({ data, pageContext }) => {
-  const { title, content, images } = data.wpPost
-  return (
-    <Layout>
-      <h1>{title}</h1>
-      <Slider data={images.slider} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-      <h2>Похожие поездки: </h2>
-      <MorePost url={pageContext.url} category={"travels"} />
-    </Layout>
-  )
+const SingleTourMexico = ({ data, pageContext}) => {
+    const { title, content, images } = data.wpPost
+    return (
+        <Layout>
+            <h1>{title}</h1>
+            <Slider data={images.slider} />
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+            <h2>Ещё мототуры: </h2>
+            <MorePost url={pageContext.urlTours} category={"mexico"} />
+        </Layout>
+    )
 }
 
-export default SinglePostTravel
+export default SingleTourMexico
 
 export const Head = ({ data }) => {
-  const { seodata } = data.wpPost
-  return < Seo title={seodata.seotitle} description={seodata.seodescription} robots={seodata.robots} />
+    const { seodata } = data.wpPost
+    return < Seo title={seodata.seotitle} description={seodata.seodescription} robots={seodata.robots} />
 }
 
 export const query = graphql`
-query getPageTravel($url: String) {
-  wpPost(slug: {eq: $url}) {
+query getPageTravel($urlTours: String) {
+  wpPost(slug: {eq: $urlTours}) {
     seodata {
       seotitle
       seodescription

@@ -1,14 +1,16 @@
-import Seo from "../components/Seo"
-import { Link } from "gatsby"
-import React from "react"
-import Layout from "../components/Layout"
-import *as classes from "../styles/tours.module.css"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import Seo from "../components/Seo";
+import Layout from "../components/Layout";
+import *as classes from "../styles/tours.module.css";
+import *as classes2 from "../styles/mainPage.module.css";
 
-const Tours = () => {
+const Tours = ({ data }) => {
+    const { content } = data.wpPage
     return (
         <Layout>
             <div>
-                <h3>Этот раздел в разработке и будет дополняться</h3>
+                <h1>Мототуризм в Мексике и Латинской Америке.</h1>
                 <div className={classes.wrapperBlockButton}>
                     <Link to={"/tours/mexico"} >
                         <button className={classes.menuButton}>
@@ -21,6 +23,10 @@ const Tours = () => {
                         </button>
                     </Link>
                 </div>
+                <div
+                    dangerouslySetInnerHTML={{ __html: content }}
+                    className={classes2.wrapperMainContent}
+                />
             </div>
         </Layout>
     )
@@ -28,6 +34,22 @@ const Tours = () => {
 
 export default Tours
 
-export const Head = () => {
-    return <Seo title={"Меню туров по Мексике и Латинской Америке"} description={"Описание рубрики туров по Мексики и Латинской Америке"} robots={"index, follow"} />
+export const Head = ({ data }) => {
+    const { seodata } = data.wpPage
+    return < Seo title={seodata.seotitle} description={seodata.seodescription} robots={seodata.robots} />
 }
+
+
+export const query = graphql`
+query getPage {
+  wpPage(slug: {eq: "tours"}) {
+    seodata {
+      seotitle
+      seodescription
+      robots
+    }
+    title
+    content
+  }
+}
+`

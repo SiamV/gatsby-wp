@@ -1,9 +1,9 @@
-import Seo from "../components/Seo"
-import { graphql, Link } from "gatsby"
-import React from "react"
-import Layout from "../components/Layout"
-import *as classes from "../styles/travels.module.css"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import React from "react";
+import { graphql, Link } from "gatsby";
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Seo from "../components/Seo";
+import Layout from "../components/Layout";
+import *as classes from "../styles/travels.module.css";
 
 const Travels = ({ data }) => {
   const postsTravel = data.allWpPost.nodes

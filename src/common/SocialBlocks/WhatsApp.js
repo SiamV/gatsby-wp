@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const WhatsApp = () => {
     return (
         <div className={classes.wrapperImgSocial}>
-            {/* <a href="https://api.whatsapp.com/send?phone=5219983886735" rel="nofollow"> */}
+            <a href="https://api.whatsapp.com/send?phone=5219983969285" rel="nofollow">
             <StaticImage
                 placeholder="blurred"
                 src="../../images/whatsapp-v2.png"
@@ -15,7 +15,7 @@ const WhatsApp = () => {
                 layout="constrained"
                 imgStyle={{ objectFit: `contain` }}
             />
-            {/* </a> */}
+            </a>
         </div>
     )
 }
