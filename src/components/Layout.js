@@ -1,7 +1,7 @@
-import React from "react"
-import Footer from "./Footer"
-import Header from "./Header"
-import *as classes from "./Layout.module.css"
+import React from "react";
+import Footer from "./Footer";
+import Header from "./Header";
+import *as classes from "./Layout.module.css";
 
 const Layout = ({ children }) => {
     return (
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
                 <Header />
             </div>
             <div className={classes.siteWrapperFeed}>
-                    {children}
+                {children}
             </div>
             <div className={classes.siteWrapperFooter}>
                 <Footer />

@@ -1,0 +1,38 @@
+/* css для текста и картинок внутри поста, получаемые с WP */
+/* шрифт получаем с установленного пакета npm install @fontsource/open-sans*/
+/* подключается в gatsby-browser.js и используется в css: font-family: "Open Sans"; */
+
+.wrapperContent > p > span {
+    font-family: "Open Sans";
+    line-height: 1.4;
+    letter-spacing: calc(1em / 12);
+    font-size: 14px ;
+}
+.wrapperContent img {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* custom css для страниц и статей на сайте*/
+.buttonTours {
+    margin-right: 10vw;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    background-color: rgba(207, 211, 214, 0.65);
+    border: none;
+    border-radius: 10%;
+    box-shadow: 0 0 10px #000000;
+}
+.buttonTours:hover {
+    background-color: rgb(145, 139, 139);
+    color: rgba(207, 211, 214);
+}
+.buttonTours:active {
+    background-color: rgb(145, 139, 139);
+    color: rgba(207, 211, 214);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

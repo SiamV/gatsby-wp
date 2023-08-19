@@ -1,0 +1,13 @@
+User-agent: Yandex
+Allow: /
+Host: www.la-moto.ru
+
+User-agent: Googlebot
+Allow: /
+Allow: *.css # открыть все файлы стилей
+Allow: *.js # открыть все с js-скриптами
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.la-moto.ru/sitemap-index.xml

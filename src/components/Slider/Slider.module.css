@@ -33,6 +33,24 @@
     display: none;
 }
 
+.slide img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideHidden img{
+    display: none;
+}
+
+/* .imgSlider img{
+    width: 100%;
+    height: 60vh;
+    object-fit: contain;
+} */
+
 .arrow {
     position: absolute;
     width: 2rem;

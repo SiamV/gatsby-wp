@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import *as classes from "../styles/tours.module.css";
-import *as classes2 from "../styles/mainPage.module.css";
+import *as classes2 from "../styles/single-page.module.css";
 
 const Tours = ({ data }) => {
     const { content } = data.wpPage
@@ -25,7 +25,7 @@ const Tours = ({ data }) => {
                 </div>
                 <div
                     dangerouslySetInnerHTML={{ __html: content }}
-                    className={classes2.wrapperMainContent}
+                    className={classes2.wrapperContent}
                 />
             </div>
         </Layout>

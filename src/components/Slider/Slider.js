@@ -34,15 +34,21 @@ const Slider = ({ data }) => {
             {/*slider*/}
             {data.map((slide, slideIndex) => {
                 return (
-                    <GatsbyImage
-                        image={getImage(slide.localFile.childImageSharp.gatsbyImageData)}
-                        alt={slide.localFile.base.split("-").join(" ").split(".")[0]}
-                        layout="constrained"
+                    <div
                         className={currentIndex === slideIndex ? classes.slide : classes.slide + ' ' + classes.slideHidden}
-                        imgStyle={{ objectFit: `contain` }}
                         key={slide.localFile.childImageSharp.id}
-                        priority="true"
-                    />
+                    >
+                        <GatsbyImage
+                            image={getImage(slide.localFile.childImageSharp.gatsbyImageData)}
+                            alt={slide.localFile.base.split("-").join(" ").split(".")[0]}
+                            layout="constrained"
+                            loading="eager"
+                            className={currentIndex === slideIndex ? classes.slide : classes.slide + ' ' + classes.slideHidden}
+                            imgStyle={{ objectFit: `contain` }}
+                            priority="true"
+                        />
+                    </div>
+
                 )
             })}
 

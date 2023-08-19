@@ -12,9 +12,9 @@ const Travels = ({ data }) => {
     <Layout>
       <h2> Предстоящие мероприятия:</h2>
       <div className={classes.wrapperNotice}>
-        <p>
+
           В RiderClub собираемся чтобы просто покатать по Юкатану в компании друзей кто живет в Канкуне, Плайя Дель Кармен или другой части Карибского побережья Мексики.
-        </p>
+
       </div>
       <h2> Наши прошлые поездки:</h2>
       <div className={classes.wrapperPosts}>
@@ -25,12 +25,13 @@ const Travels = ({ data }) => {
                 image={getImage(post.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
                 alt={"image"} //change for SEO
                 layout="constrained"
-                imgStyle={{ objectFit: `cover` }}
+                imgStyle={{ objectFit: `contain` }}
                 className={classes.gatsbyImage}
               />
             </div>
             <div className={classes.wrapperInfoBlock}>
               <h3>{post.title}</h3>
+              <p>Подробнее...</p>
             </div>
           </Link>
         </div>)}
@@ -64,7 +65,6 @@ query MyQuery {
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP]
-                transformOptions: {cropFocus: CENTER}
               )
             }
           }

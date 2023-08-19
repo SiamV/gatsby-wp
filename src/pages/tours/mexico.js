@@ -10,7 +10,7 @@ const Mexico = ({ data }) => {
     return (
         <Layout>
             <div>
-                <h1>Мототуры по Мексике</h1>
+                <h1>МОТОТУРЫ ПО МЕКСИКЕ</h1>
                 <div className={classes.wrapperPosts}>
                     {postsTravel.map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
                         <Link to={`/${post.categories.nodes[0].name}/${post.slug}`} className={classes.myLinkTravel}>
@@ -19,12 +19,13 @@ const Mexico = ({ data }) => {
                                     image={getImage(post.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
                                     alt={"image"} //change for SEO
                                     layout="constrained"
-                                    imgStyle={{ objectFit: `cover` }}
+                                    imgStyle={{ objectFit: `contain` }}
                                     className={classes.gatsbyImage}
                                 />
                             </div>
                             <div className={classes.wrapperInfoBlock}>
                                 <h3>{post.title}</h3>
+                                <p>Подробнее...</p>
                             </div>
                         </Link>
                     </div>)}
@@ -59,7 +60,6 @@ query MyQuery {
               gatsbyImageData(
                 placeholder: BLURRED
                 formats: [AUTO, WEBP]
-                transformOptions: {cropFocus: CENTER}
               )
             }
           }

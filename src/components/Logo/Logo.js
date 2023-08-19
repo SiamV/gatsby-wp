@@ -10,7 +10,7 @@ const Logo = () => {
             <Link to={"/"} >
                 <StaticImage
                     placeholder="blurred"
-                    src="../../images/logo-moto4.png"
+                    src="../../images/logo.png"
                     alt="logo"
                     formats={["AUTO", "WEBP", "AVIF"]}
                     className={classes.imgWrapper}

@@ -1,30 +1,38 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Seo from "../components/Seo";
-// import *as classes from "../styles/single-travel.module.css";
+import *as classes from "../styles/single-page.module.css";
 import Slider from "../components/Slider/Slider";
 import MorePost from "../components/MorePost/MorePost";
+import CountPrice from "../components/CountPrice/CountPrice";
 
 
-const SingleTourMexico = ({ data, pageContext}) => {
-    const { title, content, images } = data.wpPost
-    return (
-        <Layout>
-            <h1>{title}</h1>
-            <Slider data={images.slider} />
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <h2>Ещё мототуры: </h2>
-            <MorePost url={pageContext.urlTours} category={"mexico"} />
-        </Layout>
-    )
+const SingleTourMexico = ({ data, pageContext }) => {
+  const { title, content, images, price } = data.wpPost
+  return (
+    <Layout>
+      <h1>{title.toUpperCase()}</h1>
+      <Slider data={images.slider} />
+      <div dangerouslySetInnerHTML={{ __html: content }} className={classes.wrapperContent} />
+      <CountPrice price={price} />
+      <h3> Заказать этот тур можно по контактам внизу экрана</h3>
+      <br />
+      <hr />
+      <h3>Ещё мототуры: </h3>
+      <MorePost url={pageContext.urlTours} category={"mexico"} />
+      <Link to={`/tours/mexico`}>
+        <button className={classes.buttonTours}>Назад к списку туров</button>
+      </Link>
+    </Layout>
+  )
 }
 
 export default SingleTourMexico
 
 export const Head = ({ data }) => {
-    const { seodata } = data.wpPost
-    return < Seo title={seodata.seotitle} description={seodata.seodescription} robots={seodata.robots} />
+  const { seodata } = data.wpPost
+  return < Seo title={seodata.seotitle} description={seodata.seodescription} robots={seodata.robots} />
 }
 
 export const query = graphql`
@@ -50,6 +58,16 @@ query getPageTravel($urlTours: String) {
           base
         }
       }
+    }
+    price {
+        currentPayForMoto
+        income
+        priceForGuidePerDay
+        priceHotel
+        pricePerDayPerPerson
+        priceRentMoto
+        amountDays
+        amountNights
     }
   }
 }

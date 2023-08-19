@@ -7,7 +7,6 @@ const Footer = () => {
     return (
         <div className={classes.wrapperFooter}>
             <WhatsApp />
-            {/* <div className={classes.wrapperText}> Общаемся в чате:</div> */}
             <Telegram />
         </div>
     )

@@ -12,19 +12,19 @@
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: #D50065;
+    color: #8A0041;
     background-color: #FFDE00;
     border: none;
     border-radius: 10%;
     box-shadow: 0 0 10px #000000;
 }
 .menuButton:hover {
-    background-color: #D50065;
+    background-color: #8A0041;
     color: #FFDE00;
 }
 .menuButton:active {
-    background-color: #D50065;
+    background-color: #8A0041;
     color: #FFDE00;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}

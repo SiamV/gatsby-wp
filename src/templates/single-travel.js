@@ -2,19 +2,23 @@ import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Seo from "../components/Seo";
-// import *as classes from "../styles/single-travel.module.css";
+import *as classes from "../styles/single-page.module.css";
 import Slider from "../components/Slider/Slider";
 import MorePost from "../components/MorePost/MorePost";
 
 
 const SinglePostTravel = ({ data, pageContext }) => {
   const { title, content, images } = data.wpPost
+  console.log(content)
+
   return (
     <Layout>
-      <h1>{title}</h1>
+      <h1>{title.toUpperCase()}</h1>
       <Slider data={images.slider} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-      <h2>Похожие поездки: </h2>
+      <div dangerouslySetInnerHTML={{ __html: content }} className={classes.wrapperContent} />
+      <br />
+      <hr />
+      <h3>Похожие поездки: </h3>
       <MorePost url={pageContext.url} category={"travels"} />
     </Layout>
   )

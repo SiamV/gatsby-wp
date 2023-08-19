@@ -1,35 +1,42 @@
+@font-face {
+    font-family: 'Inter var';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url("/fonts/Inter-roman.var.woff2") format("woff2");
+}
+
 html,
 body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     color: white;
+    font-family: 'Inter var';
     line-height: 1.4;
-    font-size: 16px;
+    letter-spacing: calc(1em / 12);
+    font-size: 14px;
     background-color: rgba(230, 230, 230, 1);
-    /* background-image: url("../images/bandera-mexico.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom center; */
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     margin: 0;
     padding: 0;
-    overflow: auto;
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 18px;
     color: white;
 }
 
 h2 {
-    font-size: 18px;
-    color: #00CC00 ;
+    font-size: 16px;
+    background-color: rgb(74, 194, 74, 0.65);
+    color: white ;
+    padding: 3px;
+    line-height: 120%;
+    width: fit-content;
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 15px;
     color: white  ;
 }
 

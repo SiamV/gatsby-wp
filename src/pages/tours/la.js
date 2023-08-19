@@ -1,14 +1,20 @@
-import Seo from "../../components/Seo"
-import React from "react"
-import Layout from "../../components/Layout"
+import React from "react";
+import { Link } from "gatsby";
+import Seo from "../../components/Seo";
+import Layout from "../../components/Layout";
+import *as classes from "../../styles/single-page.module.css";
 
 const LatinaAmerica = () => {
     return (
         <Layout>
             <div>
-                <h2>Туры по Латинской Америке</h2>
-                <h3>Этот раздел в разработке и будет дополняться</h3>
+                <h1>ТУРЫ ПО ЛАТИНСКОЙ АМЕРИКЕ</h1>
+                <h2>Этот раздел в разработке и будет дополняться</h2>
             </div>
+            <h3>Вернуться в рубрику туров:</h3>
+            <Link to={`/tours`}>
+                <button className={classes.buttonTours}>Назад</button>
+            </Link>
         </Layout>
     )
 }

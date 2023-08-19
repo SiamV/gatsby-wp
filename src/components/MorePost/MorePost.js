@@ -24,7 +24,6 @@ const MorePost = ({ url, category }) => {
                     gatsbyImageData(
                       placeholder: BLURRED
                       formats: [AUTO, WEBP]
-                      transformOptions: {cropFocus: CENTER}
                     )
                   }
                 }
@@ -54,7 +53,7 @@ const MorePost = ({ url, category }) => {
                                 image={getImage(relatedPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData)}
                                 alt={"image"} //change for SEO
                                 layout="constrained"
-                                imgStyle={{ objectFit: `cover` }}
+                                imgStyle={{ objectFit: `contain` }}
                                 className={classes.gatsbyImage}
                             />
                         </div>
