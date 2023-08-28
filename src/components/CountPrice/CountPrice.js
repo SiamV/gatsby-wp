@@ -15,6 +15,7 @@ const CountPrice = ({ price }) => {
     const [motos, setMotos] = useState(1);
     const [people, setPeople] = useState(1);
     const [total, setTotal] = useState(0);
+    const [totalPeople, setTotalPeople] = useState(0);
 
     const countTotal = () => {
         let totalMotos = Number(motos) + 1;
@@ -27,12 +28,22 @@ const CountPrice = ({ price }) => {
                 priceHotel + (Math.ceil(totalPeople / 2) * priceHotel)
             )
         setTotal(count)
+        setTotalPeople(people)
     }
 
     const fillArray = n => {
         let arr = [];
         if (n) for (let i = 1; i <= n;) arr.push(i++);
         return arr;
+    }
+    const morph = (n) => {
+        n = Math.abs(n) % 100;
+        let n1 = n % 10;
+        let array = ["день", "дня", "дней"]
+        if (n > 10 && n < 20) { return array[2] }
+        if (n1 > 1 && n1 < 5) { return array[1] }
+        if (n1 === 1) { return array[0] }
+        return array[2] ;
     }
 
     return (
@@ -63,7 +74,8 @@ const CountPrice = ({ price }) => {
             <button onClick={countTotal} className={classes.buttonCount}>рассчитать</button>
 
             <div>
-                Итого: {total} peso ({Math.ceil(total / dollarCourse)}usd)
+                Итого: {total} peso ({Math.ceil(total / dollarCourse)}usd ) <br />
+                Цена за {totalPeople}чел за {amountDays}{morph(amountDays)}
             </div>
         </div>
     )

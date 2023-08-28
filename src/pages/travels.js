@@ -13,12 +13,12 @@ const Travels = ({ data }) => {
       <h2> Предстоящие мероприятия:</h2>
       <div className={classes.wrapperNotice}>
 
-          В RiderClub собираемся чтобы просто покатать по Юкатану в компании друзей кто живет в Канкуне, Плайя Дель Кармен или другой части Карибского побережья Мексики.
+        В RiderClub собираемся чтобы просто покатать по Юкатану в компании друзей кто живет в Канкуне, Плайя Дель Кармен или другой части Карибского побережья Мексики.
 
       </div>
       <h2> Наши прошлые поездки:</h2>
       <div className={classes.wrapperPosts}>
-        {postsTravel.map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
+        {postsTravel.sort((a, b) => a.sort.sort - b.sort.sort).map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
           <Link to={`/${post.categories.nodes[0].name}/${post.slug}`} className={classes.myLinkTravel}>
             <div className={classes.wrapperImage}>
               <GatsbyImage
@@ -62,13 +62,13 @@ query MyQuery {
         node {
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                placeholder: BLURRED
-                formats: [AUTO, WEBP]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }
+      }
+      sort {
+        sort
       }
     }
   }

@@ -12,7 +12,7 @@ const Mexico = ({ data }) => {
             <div>
                 <h1>МОТОТУРЫ ПО МЕКСИКЕ</h1>
                 <div className={classes.wrapperPosts}>
-                    {postsTravel.map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
+                    {postsTravel.sort((a, b) => a.sort.sort - b.sort.sort).map(post => <div key={post.databaseId} className={classes.wrapperOnePost}>
                         <Link to={`/${post.categories.nodes[0].name}/${post.slug}`} className={classes.myLinkTravel}>
                             <div className={classes.wrapperImage}>
                                 <GatsbyImage
@@ -57,13 +57,13 @@ query MyQuery {
         node {
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                placeholder: BLURRED
-                formats: [AUTO, WEBP]
-              )
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }
+      }
+      sort {
+        sort
       }
     }
   }
