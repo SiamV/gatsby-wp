@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import *as classes from "./CountPrice.module.css"
 
-const CountPrice = ({ price }) => {
+const CountPrice = ({ price, titleTour }) => {
     const dollarCourse = 16;
     const amountDays = price.amountDays;
     const amountNights = price.amountNights;
@@ -43,12 +43,12 @@ const CountPrice = ({ price }) => {
         if (n > 10 && n < 20) { return array[2] }
         if (n1 > 1 && n1 < 5) { return array[1] }
         if (n1 === 1) { return array[0] }
-        return array[2] ;
+        return array[2];
     }
 
     return (
         <div className={classes.wrapperCountBlock}>
-            <h2>Рассчитать стоимость этого тура:</h2>
+            <h2>{`Рассчитать стоимость тура: \n "${titleTour}"`}</h2>
 
             <form className={classes.wrapperFormCounter}>
                 <label>Количество человек:
@@ -71,11 +71,13 @@ const CountPrice = ({ price }) => {
                 </label>
             </form>
 
-            <button onClick={countTotal} className={classes.buttonCount}>рассчитать</button>
+            <label htmlFor={'forButton'}>Рассчитать:
+                <button id={'forButton'} onClick={countTotal} className={classes.buttonCount}>OK</button>
+            </label>
 
-            <div>
-                Итого: {total} peso ({Math.ceil(total / dollarCourse)}usd ) <br />
-                Цена за {totalPeople}чел за {amountDays}{morph(amountDays)}
+            <div className={classes.blockTextTotal}>
+                <p>Итого цена за <u>{totalPeople}чел</u> за <u>{amountDays}{morph(amountDays)}</u>:</p>
+                <p>{total} peso ({Math.ceil(total / dollarCourse)}usd ) </p>
             </div>
         </div>
     )

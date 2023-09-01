@@ -37,16 +37,19 @@ const Slider = ({ data }) => {
                     <div
                         className={currentIndex === slideIndex ? classes.slide : classes.slide + ' ' + classes.slideHidden}
                         key={slide.localFile.childImageSharp.id}
+                        itemscope itemtype="https://schema.org/ImageObject"
                     >
+                        <meta itemprop="name" content={slide.caption ? slide.caption.replace(/(<([^>]+)>)/gi, "").trimEnd() : " "} />
                         <GatsbyImage
                             image={getImage(slide.localFile.childImageSharp.gatsbyImageData)}
-                            alt={slide.localFile.base.split("-").join(" ").split(".")[0]}
+                            alt={slide.altText ? slide.altText : slide.localFile.base.split("-").join(" ").split(".")[0]}
                             layout="constrained"
                             loading="eager"
                             className={currentIndex === slideIndex ? classes.slide : classes.slide + ' ' + classes.slideHidden}
                             imgStyle={{ objectFit: `contain` }}
                             priority="true"
                         />
+                        <meta itemprop="description" content={slide.description ? slide.description.replace(/(<([^>]+)>)/gi, "").trimEnd() : " "} />
                     </div>
 
                 )

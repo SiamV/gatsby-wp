@@ -33,6 +33,7 @@ h2 {
     padding: 3px;
     line-height: 120%;
     width: fit-content;
+    white-space: pre-line;
 }
 
 h3 {

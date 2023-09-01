@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import *as classes from "./Layout.module.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, titleTour }) => {
     return (
         <div className={classes.siteWrapper}>
             <div className={classes.siteWrapperHeader}>
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
                 {children}
             </div>
             <div className={classes.siteWrapperFooter}>
-                <Footer />
+                <Footer titleTour={titleTour} />
             </div>
         </div>
     )

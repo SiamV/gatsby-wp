@@ -7,15 +7,17 @@
 }
 
 .menuButton {
+    height: 5vh;
+    width: 70px;
     margin-right: 10vw;
-    padding: 5px;
+    padding-top: 1px;
     text-align: center;
     text-decoration: none;
     outline: none;
     color: #8A0041;
     background-color: #FFDE00;
     border: none;
-    border-radius: 10%;
+    border-radius: 15%;
     box-shadow: 0 0 10px #000000;
 }
 .menuButton:hover {

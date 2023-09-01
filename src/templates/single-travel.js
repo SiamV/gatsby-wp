@@ -45,14 +45,14 @@ query getPageTravel($url: String) {
       slider {
         localFile {
           childImageSharp {
-            gatsbyImageData(
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-            )
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             id
           }
           base
         }
+        altText
+        description
+        caption
       }
     }
   }

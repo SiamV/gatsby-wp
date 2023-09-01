@@ -15,24 +15,26 @@
 
 /* custom css для страниц и статей на сайте*/
 .buttonTours {
-    margin-right: 10vw;
     padding: 5px;
+    margin: 10px 0 5px 10px;
     text-align: center;
     text-decoration: none;
     outline: none;
     color: white;
-    background-color: rgba(207, 211, 214, 0.65);
+    background-color: rgb(74, 194, 74, 0.65);
     border: none;
     border-radius: 10%;
     box-shadow: 0 0 10px #000000;
+    width: 30px;
+    height: 30px;
 }
 .buttonTours:hover {
-    background-color: rgb(145, 139, 139);
-    color: rgba(207, 211, 214);
+    background-color: rgb(74, 194, 74, 0.65);
+    color: white;
 }
 .buttonTours:active {
-    background-color: rgb(145, 139, 139);
-    color: rgba(207, 211, 214);
+    background-color: rgb(74, 194, 74, 0.65);
+    color: white;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }

@@ -3,11 +3,11 @@ import * as classes from './Footer.module.css';
 import Telegram from "../common/SocialBlocks/Telegram";
 import WhatsApp from "../common/SocialBlocks/WhatsApp"
 
-const Footer = () => {
+const Footer = ({titleTour}) => {
     return (
         <div className={classes.wrapperFooter}>
-            <WhatsApp />
-            <Telegram />
+            <WhatsApp titleTour={titleTour} />
+            <Telegram titleTour={titleTour} />
         </div>
     )
 }

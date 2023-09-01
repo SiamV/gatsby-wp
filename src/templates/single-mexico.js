@@ -11,20 +11,24 @@ import CountPrice from "../components/CountPrice/CountPrice";
 const SingleTourMexico = ({ data, pageContext }) => {
   const { title, content, images, price } = data.wpPost
   return (
-    <Layout>
+    <Layout titleTour={title}>
       <h1>{title.toUpperCase()}</h1>
       <Slider data={images.slider} />
       <div dangerouslySetInnerHTML={{ __html: content }} className={classes.wrapperContent} />
-      <CountPrice price={price} />
+      <CountPrice price={price} titleTour={title}/>
       <h3> Заказать этот тур можно по контактам внизу экрана</h3>
       <br />
       <hr />
       <h3>Ещё мототуры: </h3>
       <MorePost url={pageContext.urlTours} category={"mexico"} />
-      <Link to={`/tours/mexico`}>
-        <button className={classes.buttonTours}>Назад к списку туров</button>
-      </Link>
-    </Layout>
+
+      <label htmlFor={'forButtonTour'}>Назад к списку туров:
+        <Link to={`/tours/mexico`} >
+          <button id={'forButtonTour'} className={classes.buttonTours}>OK</button>
+        </Link>
+      </label>
+
+    </Layout >
   )
 }
 
@@ -57,6 +61,9 @@ query getPageTravel($urlTours: String) {
           }
           base
         }
+        altText
+        description
+        caption
       }
     }
     price {
